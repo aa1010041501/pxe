@@ -1,0 +1,25 @@
+default vesamenu.c32
+display boot.msg
+timeout 600
+#prompt 1
+menu background splash.png
+menu title Please select the version of the system you want
+menu color border 0 #ffffffff #00000000
+
+#DEFAULT install
+
+
+label local
+menu label Boot From ^Local Drive
+#menu label 从本地硬盘引导
+menu default   ##作为默认引导项
+localboot 1   ##从本地硬盘启动
+
+
+
+#DEFAULT install
+LABEL install
+  menu rhel92
+#  menu default
+  kernel rhel92/vmlinuz
+  append initrd=rhel92/initrd.img ip=dhcp inst.repo=http://172.17.206.131/rhel92/
