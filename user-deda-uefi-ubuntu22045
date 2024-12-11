@@ -43,6 +43,9 @@ autoinstall:
     layout: us
     toggle: null
     variant: ''
+  early-commands:
+    - sudo wget -P /tmp http://172.16.208.13/UbuntuBin/ConfigureIpmiIp.sh
+    - bash /tmp/ConfigureIpmiIp.sh
   locale: en_US.UTF-8
   oem:
     install: auto
